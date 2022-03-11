@@ -9,7 +9,7 @@ The application’s front end has already been created. It's your job to build t
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
--[License](#license)
+- [License](#license)
 
 ## User Story
 

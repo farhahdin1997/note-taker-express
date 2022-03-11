@@ -87,6 +87,6 @@ app.delete ("/api/notes/:id", function (req,res){
     res.json(databas);
 });
 
-
-
-
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+});

@@ -1,37 +1,21 @@
-//======================================================================
-// Welcome to my Note-Taker, based on Express.js.
-
-// Below are my dependencies; I'm unhealthily co-dependent.
-//======================================================================
 
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const database = require("./db/db")
-
-//======================================================================
-// This sets up the Express App
-//======================================================================
-
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//==============================================================================
+
 // Gotta link to my assets!
 app.use(express.static('public'));
 
-//==============================================================================
-// This sets up data parsing-- Express will interpret it/format data as JSON.
-// This is required for API calls!
-//==============================================================================
 
+// This sets up data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//==============================================================================
 // On page load, it should start with index.html. First get it and then listen.
-//==============================================================================
-
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
@@ -41,9 +25,7 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 })
 
-//===============================================================================
 // GET, POST, DELETE API Endpoints.
-//===============================================================================
 
 // Since the GET and POST functions grab from the same route, we can set it once up here.
 app.route("/api/notes")
@@ -85,15 +67,6 @@ app.route("/api/notes")
         res.json(newNote);
     });
 
-//=================================================================
-// Delete a note based on an ID (cannot be location in array,
-// the location will change if you splice things out)
-// This route is dependent on ID of note.
-//      1. Find note by id via a loop
-//      2. Splice note out of array of notes.
-//      3. Re-write db.json, just without that newly deleted note.
-//=================================================================
-
 app.delete("/api/notes/:id", function (req, res) {
     let jsonFilePath = path.join(__dirname, "/db/db.json");
     // request to delete note by id.
@@ -117,9 +90,7 @@ app.delete("/api/notes/:id", function (req, res) {
     res.json(database);
 });
 
-//===========================================================================
 // Listening is the last thing Express should do. This sets up the server.
-//===========================================================================
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });

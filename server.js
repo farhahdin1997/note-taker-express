@@ -25,3 +25,9 @@ app.use("/notes", function (req,res){
     res.sendFile(path.join(__dirname, "/public/notes.html"))
 })
 
+// GET, POST, DELETE API Endpoints.
+app.route("/api/notes")
+    // Grab the notes list (this should be updated for every new note and deleted note.)
+.get(function (req, res){
+    res.json(database);
+})

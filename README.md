@@ -35,9 +35,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 The following images show the web application's appearance and functionality
 
-![](./Assets/screencapture-mysterious-retreat-83509-herokuapp-notes-2022-03-11-19_54_49.png)
+![](./Assets/Untitled_%20Mar%2011%2C%202022%207_58%20PM.gif)
 
-![](./Assets/screencapture-mysterious-retreat-83509-herokuapp-notes-2022-03-11-19_50_43.png)
 
 
 

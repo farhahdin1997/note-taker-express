@@ -31,3 +31,10 @@ app.route("/api/notes")
 .get(function (req, res){
     res.json(database);
 })
+
+//Add notes
+.post(function (req,res){
+let jsonFilePath = path.join(__dirname, "/db/db.json");
+let newNote = req.body;
+})
+

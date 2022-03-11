@@ -71,4 +71,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [![Npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://https://npmjs.com/) 
 [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
 [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com) 
-[![Heroku CI Status](https://{deployed app name}.herokuapp.com/last.svg)](https://mysterious-retreat-83509.herokuapp.com/)
+[](https://mysterious-retreat-83509.herokuapp.com/)

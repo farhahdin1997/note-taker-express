@@ -32,9 +32,36 @@ app.route("/api/notes")
     res.json(database);
 })
 
-//Add notes
-.post(function (req,res){
-let jsonFilePath = path.join(__dirname, "/db/db.json");
-let newNote = req.body;
-})
+//Add notes - json.db file
+ // Add a new note to the json db file.
+ .post(function (req, res) {
+    let jsonFilePath = path.join(__dirname, "/db/db.json");
+    let newNote = req.body;
 
+    // This allows the test note to be the original note.
+    let highestId = 99;
+    // This loops through the array and finds the highest ID.
+    for (let i = 0; i < database.length; i++) {
+        let individualNote = database[i];
+
+        if (individualNote.id > highestId) {
+            // highestId will always be the highest numbered id in the notesArray.
+            highestId = individualNote.id;
+        }
+    }
+    // This assigns an ID to the newNote. 
+    newNote.id = highestId + 1;
+    // We push it to db.json.
+    database.push(newNote)
+
+    // Write the db.json file again.
+    fs.writeFile(jsonFilePath, JSON.stringify(database), function (err) {
+
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Your note was saved!");
+    });
+    // Gives back the response, which is the user's new note. 
+    res.json(newNote);
+});
